@@ -37,6 +37,49 @@ class MyNGram:
     
     cutlist = "<>/:：;；,、＂’，.。！？｢\"\'\\\n\r《》“”!@#$%^&*()「」『』—–©®™¶…‘’“”﹁﹂﹃﹄︻︼‹›․‧﹛﹜﹝﹞﹟﹠﹡﹤﹥︽︾︿﹀｢｣～".decode("utf-8")  
     
+    def readTxt(text_path, keywords):
+        sentence = ""
+        textList = []
+
+        text = codecs.open(text_path,"r","utf-8")   #開檔         
+        for line in text.readlines():
+            #print line
+            line = line.strip() ##清除空白
+
+            for keyword in keywords:  #清除關鍵字
+                line = "".join(line.split(keyword))
+                    
+            for word in line:
+                if word not in self.cutlist: #如果文字不是標點符號，就把字加到句子中
+                    sentence += word
+                        #print sentence
+                else:
+                    textList.append(sentence) #如果遇到標點符號，把句子加到 text list中
+                    sentence = ""
+                    #print textList
+        return textList
+
+    def readExcel(self, text_path, keywords, column):
+        wb = open_workbook(text_path)
+        sheet = wb.sheet_by_index(0)
+        for row in range(sheet.nrows):
+            line = sheet.cell(row,column).value.strip()
+        
+            for keyword in keywords:  #清除關鍵字
+                line = "".join(line.split(keyword))
+                    
+            for word in line:
+                if word not in self.cutlist: #如果文字不是標點符號，就把字加到句子中
+                    sentence += word
+                    #print sentence
+                else:
+                    textList.append(sentence) #如果遇到標點符號，把句子加到 text list中
+                    sentence = ""
+                    #print textList
+
+        return textList#傳回一個文字陣列
+    
+
     def cutSentence(self, text_path, keywords,column=1): ##放入原始文章路徑, 增加斷詞的list
         sentence = ""
         textList = []
