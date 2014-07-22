@@ -8,3 +8,8 @@ Text Mining tools for Chinese Text
 
 詳細教學請參考
 http://bryannotes.blogspot.tw/2014/07/python-n-gram-analyst-free-software.html
+
+資料夾如下
+App - 原始Pothon files
+Templete - 使用wxGlade製作的templete
+dist - 編譯後的執行檔
