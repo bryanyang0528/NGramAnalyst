@@ -13,7 +13,7 @@
 #
 
 
-version = "1.01"
+version = "1.01a"
 description =""u"以N-GLAM演算法打造的文本分析工具。\n本工具僅支援中文文章，同時支援.txt(UTF-8), EXCEL檔案。\n採用標點斷句及長詞優先演算法。""" 
 filelists = [".txt", ".xls", "xlsx"]        
 

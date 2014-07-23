@@ -1,1 +1,1 @@
-D:\Python\N-Gram-Analyst\dist\NGramAnalyst.exe:369: wxPyDeprecationWarning: Call to deprecated item 'InitAllImageHandlers'. 
+D:\Python\NGramAnalyst\App\dist\NGramAnalyst.exe:417: wxPyDeprecationWarning: Call to deprecated item 'InitAllImageHandlers'. 
